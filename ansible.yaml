@@ -1,0 +1,9 @@
+---
+pool:
+  name: "Default"
+
+trigger:
+  - main
+
+steps:
+  script: ansible-playbook -i /home/ansible/hosts /home/ansible/java.yaml

@@ -1,0 +1,11 @@
+---
+pool:
+  name: "Default"
+
+trigger:
+  - main
+
+steps:
+  - task: CmdLine@2
+    inputs:
+      script: printenv
