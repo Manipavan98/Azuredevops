@@ -1,0 +1,24 @@
+parameters:
+  - name: command
+    type: string
+    default: install
+    values:
+      - install 
+      - publish
+
+pool:
+  name: Default
+
+trigger:
+  - main
+
+stages:
+  - stage: npm install
+    displayName: npm
+    jobs:
+      - job: install
+        displayName: npm
+        steps:
+          - tasks: Npm@1
+            inputs:
+              command: ${{ parameters.command }}

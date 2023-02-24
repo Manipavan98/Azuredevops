@@ -5,4 +5,4 @@ trigger:
   - main
 
 extends:
-  template: template.yaml
+  template: ./template.yaml

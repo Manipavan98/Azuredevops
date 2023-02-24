@@ -1,0 +1,22 @@
+parameters:
+  - name: command
+    type: string
+    default: build
+    values:
+      - build
+      - publish
+      - test
+      - restore
+      - run
+
+stages:
+  - stage: build
+    displayName: dotnet build
+    jobs:
+      - job: buildjob
+        displayName: dotnet
+        steps:
+          - task: DotNetCoreCLI@2
+            inputs:
+              command: ${{ parameters.command }}
+              projects: test/tests.csproj

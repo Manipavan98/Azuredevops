@@ -33,7 +33,7 @@ parameters:
 
 stages:
   - stage: Build
-    displayname: Maven build
+    displayName: Maven build
     jobs:
       - job: mavenjob
         displayName: Maven
@@ -41,9 +41,9 @@ stages:
           - task: Maven@3
             inputs:
               mavenPOMFile: 'pom.xml'
-              goals: ${{ parameters.goal }}
+              goals: "${{ parameters.goal }}"
               publishJUnitResults: true
               testResultsFiles: '**/surefire-reports/TEST-*.xml'
-              javaHomeOption: ${{ parameters.javaversion }}
-              jdkDirectory: ${{ parameters.jdkdirectory }}
-              mavenDirectory: ${{ parameters.mavendirectory }}
+              javaHomeOption: "${{ parameters.javaversion }}"
+              jdkDirectory: "${{ parameters.jdkdirectory }}"
+              mavenDirectory: "${{ parameters.mavendirectory }}"

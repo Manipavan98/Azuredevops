@@ -1,0 +1,9 @@
+pool: 
+  name: Default
+
+trigger: 
+  - main
+
+extends:
+  template: ./template.yaml
+  

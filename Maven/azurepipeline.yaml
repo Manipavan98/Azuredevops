@@ -1,13 +1,13 @@
 ---
 pool:
-  name: "Default"
+  name: Default
 
 trigger:
   - main
 
 stages:
   - stage: Build
-    displayname: Maven build
+    displayName: Maven build
     jobs:
       - job: mavenjob
         displayName: Maven

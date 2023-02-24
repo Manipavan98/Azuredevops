@@ -1,0 +1,19 @@
+parameters:
+  - name: command
+    type: string
+    default: install
+    values:
+      - install 
+      - publish
+
+
+stages:
+  - stage: npminstall
+    displayName: npm
+    jobs:
+      - job: install
+        displayName: npm
+        steps:
+          - task: Npm@1
+            inputs:
+              command: ${{ parameters.command }}
